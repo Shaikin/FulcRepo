@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TRANSMITTALS Suite">
+  <test name="Transmittals_New">
+    <classes>
+      <class name="com.proj.suiteTRANSMITTALS.Transmittals_New"/>
+    </classes>
+  </test> <!-- Transmittals_New -->
+</suite> <!-- TRANSMITTALS Suite -->

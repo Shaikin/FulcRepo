@@ -1,0 +1,45 @@
+Buildfile: C:\LeapThoughtProjectWS\Falcrum_Trunk\build.xml
+
+setClassPath:
+
+init:
+     [echo] Creating  directory...
+
+compile:
+     [echo] compiling...
+    [javac] C:\LeapThoughtProjectWS\Falcrum_Trunk\build.xml:54: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 40 source files to C:\LeapThoughtProjectWS\Falcrum_Trunk\build
+     [copy] Copying 33 files to C:\LeapThoughtProjectWS\Falcrum_Trunk\build
+
+createxmls:
+   [testng] [TestNG] Running:
+   [testng]   C:\LeapThoughtProjectWS\Falcrum_Trunk\conf\TestNG\runnerXml\runner.xml
+   [testng] 
+   [testng] *********Trigger Test ***********
+   [testng] *********Suite Folder Files are Deleted ***********
+   [testng] *********Testoutput Folder Files are Deleted ***********
+   [testng] Runnable Suites are {TRANSMITTALS Suite=TRANSMITTALS}
+   [testng] Total tests{Transmittals_New=Y}
+   [testng] All Classes under suites are generated..
+   [testng] ****************** Creating TestNG XML **************
+   [testng] Done creating XML File
+   [testng] 
+   [testng] ===============================================
+   [testng] Trigger suite
+   [testng] Total tests run: 1, Failures: 0, Skips: 0
+   [testng] ===============================================
+   [testng] 
+
+run:
+   [testng] [TestNG] Running:
+   [testng]   C:\LeapThoughtProjectWS\Falcrum_Trunk\conf\TestNG\suites\TRANSMITTALS Suite.xml
+   [testng] 
+   [testng] Test Base Initialization starts
+   [testng] Starting ChromeDriver 2.12.301325 (962dea43ddd90e7e4224a03fa3c36a421281abb7) on port 44755
+   [testng] Only local connections are allowed.
+   [testng] log4j:WARN No appenders could be found for logger (org.apache.http.client.protocol.RequestAddCookies).
+   [testng] log4j:WARN Please initialize the log4j system properly.
+   [testng] In test
+   [testng] Static ...............Initializeeeeeeeeeee
+   [testng] Static ...............Initializeeeeeeeeeee
+Terminate batch job (Y/N)? 
