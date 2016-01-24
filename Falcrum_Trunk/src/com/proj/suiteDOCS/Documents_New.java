@@ -12,13 +12,12 @@ import com.frw.Constants.Constants_FRMWRK;
 import com.frw.util.WaitUtil;
 import com.proj.Constants.Constants;
 import com.proj.library.ApplicationMethods_Falcrum;
-import com.proj.suiteTRANSMITTALS.Transmittals_New;
 import com.proj.util.CustomExceptions;
 import com.proj.util.TestExecutionUtil;
 
 public class Documents_New extends TestSuiteBase{
 
-	private String local_testcaseName=Transmittals_New.class.getSimpleName();
+	private String local_testcaseName=Documents_New.class.getSimpleName();
 	private String local_refID="DOCS-01";
 	String input="";
 	static String getResult="";
