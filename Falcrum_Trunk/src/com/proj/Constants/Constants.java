@@ -37,7 +37,7 @@ public class Constants {
 	
 	
 	public static final String Module_TRANS="TRANSMITTALS";
-	public static final String Module_DOCS="DOCS Suite";
+	public static final String Module_DOCS="DOCS";
 	
 	
 	//OR Paths
