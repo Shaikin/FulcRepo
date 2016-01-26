@@ -121,13 +121,13 @@ public class KeyMethodsUtil extends TestBase{
 	}
 	
 	
-	public static String textbox_autosuggest_browse(WebDriver driver,String workFlow,String step,String input,WebElement element) throws Throwable{
+	public static String textbox_autosuggest_browse(WebDriver driver,String testcasename,String workFlow,String step,String input,WebElement element) throws Throwable{
 		String flag=Constants_FRMWRK.False;
 		try{
 			element.click();
 			try{
 				//commonMethods.switchToFrameFromDefault(driver, testcaseName, Constants_FRMWRK.FindElementByXPATH, ObjRepository.frame_double);
-				ApplicationMethods_Falcrum.switchToLatestDLGframe(driver);
+				ApplicationMethods_Falcrum.switchToLatestDLGframe(driver,testcasename);
 				WebElement prvPage=FetchWebElement.waitForElement(driver, Constants_FRMWRK.FindElementByXPATH, ObjRepository.choice_prvpage, Constants_TimeOuts.Element_TimeOut);
 				if(prvPage!=null && prvPage.isDisplayed()==true){
 					prvPage.click();
@@ -164,7 +164,7 @@ public class KeyMethodsUtil extends TestBase{
 		}
 		finally{
 			WaitUtil.pause(500L);
-			ApplicationMethods_Falcrum.switchToLatestDLGframe(driver);
+			ApplicationMethods_Falcrum.switchToLatestDLGframe(driver,testcasename);
 		}
 		return flag;
 	}
