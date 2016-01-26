@@ -14,6 +14,7 @@ import com.frw.util.WaitUtil;
 import com.proj.Constants.Constants_TimeOuts;
 import com.proj.base.TestBase;
 import com.proj.objectRepository.ObjRepository;
+import com.proj.util.CustomExceptions;
 import com.proj.util.Dialogs;
 import com.report.reporter.Reporting;
 
@@ -147,7 +148,7 @@ public class ApplicationMethods_Falcrum extends TestBase{
 
 
 	public static String logOutFromApplicationAndcloseBrowser(WebDriver driver) throws Throwable{
-
+		WaitUtil.pause(2);
 		String flag=Constants_FRMWRK.True;				
 		flag=logOutFromApplication(driver);
 		PopUpUtil.checkDefaultPopup(driver, "ok");
@@ -196,15 +197,20 @@ public class ApplicationMethods_Falcrum extends TestBase{
 		}
 		return flag;
 	}
-	public static void switchToLatestDLGframe(WebDriver driver) throws Throwable{
+	public static void switchToLatestDLGframe(WebDriver driver,String testcasename) throws Throwable{
 		String frameName;
 		WaitUtil.pause(2);
-		int frames=getApplicationFrameCount(driver);
-		if(frames!=0){
-			frameName=ObjRepository.frame_list_pattern;
-			frameName=frameName.replaceAll("framelist", String.valueOf(frames));
-			commonMethods.switchToFrameFromDefault(driver, local_testcaseName, Constants_FRMWRK.FindElementByXPATH, frameName);
+		try{
+			int frames=getApplicationFrameCount(driver);
+			if(frames!=0){
+				frameName=ObjRepository.frame_list_pattern;
+				frameName=frameName.replaceAll("framelist", String.valueOf(frames));
+				commonMethods.switchToFrameFromDefault(driver, testcasename, Constants_FRMWRK.FindElementByXPATH, frameName);
+			}
+		}catch (Throwable t ){
+			CustomExceptions.Exit(testcasename, "Switch to latest frame -Failure", "Unable to switch the latest frame expected due to error-"+commonMethods.getStackTrace(t));
 		}
+		
 		
 	}
 }
