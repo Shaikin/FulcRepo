@@ -3,6 +3,7 @@ package com.proj.utilFulcrum;
 import java.util.Hashtable;
 import java.util.List;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -45,11 +46,17 @@ public class KeyMethodsUtil extends TestBase{
 				dropdownItems.put(rowNumber+Integer.toString(rowCount), actualtext);
 				if(actualtext.equals(input)){
 					try{
-						WaitUtil.pause(1);
-						element.click();
-						flag=actualtext;
-						Reporting.logStep(driver, refID, step, "js_selectItem:- Item "+actualtext+" is located and clicked", Constants_FRMWRK.Pass);
-						break;
+						try{
+							WaitUtil.pause(1);
+							element.click();
+							flag=actualtext;
+							Reporting.logStep(driver, refID, step, "js_selectItem:- Item "+actualtext+" is located and clicked", Constants_FRMWRK.Pass);
+							break;
+						}catch (StaleElementReferenceException st){
+							logsObj.log("js_selectItem:- Item "+actualtext+" is located but unable to click due to state error, will rerun again");
+							js_selectItem(driver, workFlow, step, itemsXpath, input);
+						}
+						
 					}catch(Throwable t){
 						isTestPass=Constants_FRMWRK.FalseB;
 						logsObj.logError("js_selectItem:- Item "+actualtext+" is located but unable to click due to error", t);
