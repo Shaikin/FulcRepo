@@ -46,6 +46,7 @@ public class KeyMethodsUtil extends TestBase{
 				dropdownItems.put(rowNumber+Integer.toString(rowCount), actualtext);
 				if(actualtext.equals(input)){
 					try{
+						logsObj.log("js_selectItem:- actual item text-"+actualtext+"matches with expected item text-"+input+" next is click..");
 						try{
 							WaitUtil.pause(1);
 							element.click();
