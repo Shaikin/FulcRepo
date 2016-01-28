@@ -43,12 +43,13 @@ public class Constants {
 	//OR Paths
 	public static final String OR_Nav_Path=System.getProperty("user.dir")+"\\src\\com\\proj\\objectRepository\\ObjectsFile_Navigation.xlsx";
 	public static final String OR_TRANS_Path=System.getProperty("user.dir")+"\\src\\com\\proj\\objectRepository\\ObjectsFile_Transmittals.xlsx";
-	public static final String OR_DOCS_Path=System.getProperty("user.dir")+"\\src\\com\\proj\\objectRepository\\ObjectsFile_DOCS.xlsx";
+	public static final String OR_DOCS_Path=System.getProperty("user.dir")+"\\src\\com\\proj\\objectRepository\\ObjectsFile_Documents.xlsx";
 
 	
 	
 	//Data sheets Path
-	public static final String DataFile_ASSETS_Path=System.getProperty("user.dir")+"\\src\\com\\proj\\suiteASSETS\\testdata\\";
+	public static final String DataFileLocation_Transmittal=System.getProperty("user.dir")+"\\src\\com\\proj\\suiteTRANSMITTALS\\testdata\\";
+	public static final String DataFileLocation_Documents=System.getProperty("user.dir")+"\\src\\com\\proj\\suiteDOCS\\testdata\\";
 	
 	//Locator Types
 	public static final String LocatorTypeButton="button";
